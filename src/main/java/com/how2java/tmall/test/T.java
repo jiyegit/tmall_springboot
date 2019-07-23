@@ -1,25 +1,15 @@
 package com.how2java.tmall.test;
 
 public class T {
-    public static String replace( String str, String oldStr, String newStr)
-    {
-        int i, j, n, l = oldStr.length();
-        String rst = "";
 
-        for ( i = 0, n = str.length() ; i < n && (j = str.indexOf(oldStr,i)) >= 0 ; i = j + l )
-        {
-            rst += str.substring(i,j) + newStr;
-        }
-        if (i < n) rst += str.substring(i);
-
-        return rst;
-    }
-    public static String prep4DB(String argStr)
-    {
-        if (argStr == null) return ""; else return replace(argStr,"'","''");
-    }
     public static void main(String[] args) {
-        String s=T.prep4DB("aasdasdasd--asdfasdfasd-fsd-fa-sdf-asdfasfeaw");
-        System.out.println(s);
+        String service_ip="118.145.6.113";
+        String site_id="s233834";
+        String password="Abcd1234";
+        String[] cmds = {"Action:Set Password","Server_IP:" + service_ip,"Site_ID:" + site_id,"Password:" + password};
+        for (String s:cmds) {
+            System.out.println(s);
+        }
     }
+
 }
